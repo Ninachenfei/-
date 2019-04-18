@@ -1,15 +1,16 @@
-
+/*设置缩略图的样式*/
 figure{
-  display:inline-block !important;
+  display: inline-block !important;
   margin: 5px 15px;
   img{
     width: 80px;
     height: 55px;
   }
 }
+//图文列表样式
 .content{
   img{
     width: 100%;
-    float:left;
+    float: left;
   }
 }

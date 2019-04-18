@@ -1,35 +1,17 @@
 <template>
     <div>
-        <h3>{{list.title}}</h3>
-        <hr>
-        <div v-html="list.content" class="content"></div>
+        <!--商品评论组件-->
+        <comment :id="$route.params.id"></comment>
     </div>
 </template>
 
 <script>
+    import comment from '../subcomponents/comment.vue'
     export default {
         name: "goodsComment",
-        data(){
-            return{
-                id:this.$route.params.id,
-                list:[]
-            }
-        },
-        methods:{
-            getList(){
-                this.$http.get('api/goods/getdesc/'+this.id)
-                    .then(result=>{
-                        if(result.body.status===0){
-                            this.list=result.body.message[0]
-                        }
-                    })
-
-            }
-        },
-        created(){
-            this.getList()
+        components:{
+            comment
         }
-
     }
 </script>
 

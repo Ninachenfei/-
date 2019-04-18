@@ -1,9 +1,10 @@
 <template>
     <div>
+        <!--轮播图-->
         <mt-swipe :auto="4000">
-            <!--以后谁使用轮播图组件谁就使用bannerList-->
-            <mt-swipe-item v-for="item in bannerList" :key="item.id">
-                <img :src="item.img" alt="" :class="{width:bol}">
+            <!--将来, 谁使用, 谁就传递bannerList-->
+            <mt-swipe-item v-for="item in bannerList" :key="item.id" >
+                <img :src="item.img" alt="" :class="{'width':bol}">
             </mt-swipe-item>
         </mt-swipe>
     </div>
@@ -20,13 +21,14 @@
     .width{
         width: 100%;
     }
+
     .mint-swipe{
         height: 200px;
         .mint-swipe-item{
-            /*background-color:pink;*/
             text-align: center;
+            //background-color: pink;
             img{
-                /*width: 100%;*/
+                //width: 100%;
                 height: 100%;
             }
         }
